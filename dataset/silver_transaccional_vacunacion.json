@@ -1,0 +1,119 @@
+{
+	"name": "silver_transaccional_vacunacion",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dw_PAI",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "silver"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id_registro_origen",
+				"type": "varchar"
+			},
+			{
+				"name": "fuente_datos",
+				"type": "varchar"
+			},
+			{
+				"name": "paciente_id",
+				"type": "varchar"
+			},
+			{
+				"name": "documento_identidad",
+				"type": "varchar"
+			},
+			{
+				"name": "nombre_paciente",
+				"type": "varchar"
+			},
+			{
+				"name": "apellido_paterno",
+				"type": "varchar"
+			},
+			{
+				"name": "apellido_materno",
+				"type": "varchar"
+			},
+			{
+				"name": "genero",
+				"type": "varchar"
+			},
+			{
+				"name": "fecha_nacimiento",
+				"type": "date"
+			},
+			{
+				"name": "municipio_residencia",
+				"type": "varchar"
+			},
+			{
+				"name": "pueblo_indigena_comunidad",
+				"type": "varchar"
+			},
+			{
+				"name": "edad_dias",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "fecha_vacunacion",
+				"type": "date"
+			},
+			{
+				"name": "vacuna_id",
+				"type": "varchar"
+			},
+			{
+				"name": "vacuna_nombre_origen",
+				"type": "varchar"
+			},
+			{
+				"name": "numero_dosis",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "establecimiento_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "establecimiento_nombre_origen",
+				"type": "varchar"
+			},
+			{
+				"name": "departamento_evento",
+				"type": "varchar"
+			},
+			{
+				"name": "numero_lote",
+				"type": "varchar"
+			},
+			{
+				"name": "temperatura_conservacion_celsius",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "via_administracion",
+				"type": "varchar"
+			},
+			{
+				"name": "fecha_carga_silver",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "silver",
+			"table": "transaccional_vacunacion"
+		}
+	}
+}
