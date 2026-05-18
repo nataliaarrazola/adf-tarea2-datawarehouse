@@ -17,7 +17,7 @@
 				"folderPath": "bronze",
 				"container": "pai-data"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
