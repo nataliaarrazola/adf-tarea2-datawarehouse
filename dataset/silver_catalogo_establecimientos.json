@@ -13,8 +13,7 @@
 		"schema": [
 			{
 				"name": "establecimiento_id",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "nombre_establecimiento",
@@ -26,7 +25,8 @@
 			},
 			{
 				"name": "nivel_atencion",
-				"type": "varchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "zona",
@@ -51,13 +51,13 @@
 			{
 				"name": "latitud",
 				"type": "decimal",
-				"precision": 9,
+				"precision": 18,
 				"scale": 6
 			},
 			{
 				"name": "longitud",
 				"type": "decimal",
-				"precision": 9,
+				"precision": 18,
 				"scale": 6
 			},
 			{
