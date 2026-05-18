@@ -27,7 +27,14 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "derivedColumn2"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          id_registro as string,",
@@ -93,7 +100,15 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> sourceRural"
+				"     ignoreNoFilesFound: false) ~> sourceRural",
+				"sourceLaPaz derive(fuente_datos = 'La Paz',",
+				"          genero = iif(genero == 'Masculino', 'M', 'F'),",
+				"          fec_vacunacion = toDate(trim(fec_vacunacion), 'yyyy-MM-dd'),",
+				"          fec_nacimiento = toDate(trim(fec_nacimiento), 'yyyy-MM-dd')) ~> derivedColumn1",
+				"sourceSantaCruz derive(fuente_datos = 'Santa Cruz',",
+				"          {registro_id;paciente_id;ci_paciente;nombre_paciente;apellido_paterno;apellido_materno;sexo;fecha_nacimiento;municipio_residencia;comunidad_indigena;fecha_vacunacion;vacuna_id;vacuna_nombre;numero_dosis;establecimiento_id;nombre_establecimiento;departamento;lote_vacuna;temperatura_conservacion;edad_dias_aplicacion;aplicacion_oportuna;via_administracion} = ERROR_FUNCTION(''),",
+				"          columna3 = ERROR_FUNCTION(''),",
+				"          columna2 = ERROR_FUNCTION('')) ~> derivedColumn2"
 			]
 		}
 	}
